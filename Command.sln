@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command.Infrastructure", "Command.Infrastructure\Command.Infrastructure.csproj", "{E7F42BB2-9433-4EEC-949D-37E06E37C2DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command.Infrastructure.Tests", "Command.Infrastructure.Tests\Command.Infrastructure.Tests.csproj", "{8D7E65F0-C69C-4B51-90DD-1DB1B9161E42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BE65A783-433E-4741-A57B-C943FA44EA7A}"
+	ProjectSection(SolutionItems) = preProject
+		Settings.StyleCop = Settings.StyleCop
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7F42BB2-9433-4EEC-949D-37E06E37C2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F42BB2-9433-4EEC-949D-37E06E37C2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F42BB2-9433-4EEC-949D-37E06E37C2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F42BB2-9433-4EEC-949D-37E06E37C2DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D7E65F0-C69C-4B51-90DD-1DB1B9161E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D7E65F0-C69C-4B51-90DD-1DB1B9161E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D7E65F0-C69C-4B51-90DD-1DB1B9161E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D7E65F0-C69C-4B51-90DD-1DB1B9161E42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://julienvandenbussche.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Command.Infrastructure\\Command.Infrastructure.csproj
+		SccProjectName1 = Command.Infrastructure
+		SccLocalPath1 = Command.Infrastructure
+		SccProjectUniqueName2 = Command.Infrastructure.Tests\\Command.Infrastructure.Tests.csproj
+		SccProjectName2 = Command.Infrastructure.Tests
+		SccLocalPath2 = Command.Infrastructure.Tests
+	EndGlobalSection
+EndGlobal
