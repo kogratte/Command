@@ -3,8 +3,8 @@
 //      Copyright (c) . All rights reserved.
 //  </copyright>
 //  <actor>S614599 (VANDENBUSSCHE Julien)</actor>
-//  <created>02/05/2016 21:47</created>
-//  <modified>10/06/2016 15:34</modified>
+//  <created>10/06/2016 15:49</created>
+//  <modified>10/06/2016 16:15</modified>
 //  -----------------------------------------------------------------------
 
 namespace Command.Infrastructure.Tests.Core
@@ -15,10 +15,14 @@ namespace Command.Infrastructure.Tests.Core
     using Infrastructure.Core;
     using Infrastructure.Logger;
 
-    using Microsoft.Practices.ServiceLocation;
+    using Microsoft.Practices.Unity;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using Moq;
+
+    using SampleCommand;
+
+    using SampleValidator;
 
     [TestClass]
     public class CommandInOutShould
@@ -125,38 +129,38 @@ namespace Command.Infrastructure.Tests.Core
         public void Initialize()
         {
             var messenger = new Messenger(new Mock<LogHandler>().Object);
-            Mock<IServiceLocator> serviceLocator = new Mock<IServiceLocator>();
-            serviceLocator.Setup(s => s.GetInstance<InDataAnnotationOutCommand>())
-                          .Returns(() => new InDataAnnotationOutCommand(messenger));
+            Mock<IUnityContainer> container = new Mock<IUnityContainer>();
+            container.Setup(s => s.Resolve<InDataAnnotationOutCommand>())
+                     .Returns(() => new InDataAnnotationOutCommand(messenger));
 
-            serviceLocator.Setup(s => s.GetInstance<OutputNotValidInOutCommand>())
-                          .Returns(() => new OutputNotValidInOutCommand(messenger));
+            container.Setup(s => s.Resolve<OutputNotValidInOutCommand>())
+                     .Returns(() => new OutputNotValidInOutCommand(messenger));
 
-            serviceLocator.Setup(s => s.GetInstance<OverrideInValidationForInOutCommand>())
-                          .Returns(
-                              () => new OverrideInValidationForInOutCommand(messenger, new StringValidator(messenger)));
+            container.Setup(s => s.Resolve<OverrideInValidationForInOutCommand>())
+                     .Returns(
+                         () => new OverrideInValidationForInOutCommand(messenger, new StringValidator(messenger)));
 
-            serviceLocator.Setup(s => s.GetInstance<InStringOutNullValueCommand>())
-                          .Returns(() => new InStringOutNullValueCommand(messenger));
+            container.Setup(s => s.Resolve<InStringOutNullValueCommand>())
+                     .Returns(() => new InStringOutNullValueCommand(messenger));
 
-            serviceLocator.Setup(s => s.GetInstance<InNullableOutCommand>())
-                          .Returns(() => new InNullableOutCommand(messenger));
+            container.Setup(s => s.Resolve<InNullableOutCommand>())
+                     .Returns(() => new InNullableOutCommand(messenger));
 
-            serviceLocator.Setup(s => s.GetInstance<ValidationNotInstanceOfInputValidatorInOutCommand>())
-                          .Returns(
-                              () =>
-                              new ValidationNotInstanceOfInputValidatorInOutCommand(
-                                  messenger,
-                                  new NotInstanceOfInputValidator()));
+            container.Setup(s => s.Resolve<ValidationNotInstanceOfInputValidatorInOutCommand>())
+                     .Returns(
+                         () =>
+                         new ValidationNotInstanceOfInputValidatorInOutCommand(
+                             messenger,
+                             new NotInstanceOfInputValidator()));
 
-            serviceLocator.Setup(s => s.GetInstance<ValidationNotInstanceOfOutputValidatorInOutCommand>())
-                          .Returns(
-                              () =>
-                              new ValidationNotInstanceOfOutputValidatorInOutCommand(
-                                  messenger,
-                                  new NotInstanceOfOutputValidator()));
+            container.Setup(s => s.Resolve<ValidationNotInstanceOfOutputValidatorInOutCommand>())
+                     .Returns(
+                         () =>
+                         new ValidationNotInstanceOfOutputValidatorInOutCommand(
+                             messenger,
+                             new NotInstanceOfOutputValidator()));
 
-            this.processor = new Processor(serviceLocator.Object);
+            this.processor = new Processor(container.Object);
         }
 
         [TestMethod]

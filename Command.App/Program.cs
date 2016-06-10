@@ -1,34 +1,42 @@
 ﻿//  -----------------------------------------------------------------------
-//  <copyright file="Program.cs" company="AXA France Service">
-//      Copyright (c) AXA France Service. All rights reserved.
+//  <copyright file="Program.cs" company="anonyme">
+//      Copyright (c) . All rights reserved.
 //  </copyright>
 //  <actor>S614599 (VANDENBUSSCHE Julien)</actor>
-//  <created>26/02/2016 08:28</created>
-//  <modified>22/03/2016 15:14</modified>
+//  <created>10/06/2016 15:49</created>
+//  <modified>10/06/2016 16:19</modified>
 //  -----------------------------------------------------------------------
 
 namespace Command.App
 {
     using System;
+    using System.ComponentModel;
     using System.Threading.Tasks;
 
     using Infrastructure.Core;
     using Infrastructure.Logger;
 
+    using Microsoft.Practices.Unity;
+
     public class Program
     {
-        private static async Task<GenericInOutCommandAsync<string, string>> CallAsync()
+        private static async Task<GenericInOutCommandAsync<string, string>> CallAsync(IUnityContainer container)
         {
-            IProcessor processor = new Processor();
+            IProcessor processor = new Processor(container);
             var commandAsync = await processor.ProcessAsync<GenericInOutCommandAsync<string, string>, string>("plopp");
             return commandAsync;
         }
 
         private static void Main(string[] args)
         {
-            IProcessor processor = new Processor();
-            GenericInCommand<string> command = processor.Process<GenericInCommand<string>, string>("plopp");
-            CallAsync();
+            IUnityContainer container = new UnityContainer();
+            container.RegisterType<IMessenger, Messenger>();
+            LogHandler logHandler = (string category, string hostName, string ùessage) => { };
+            container.RegisterInstance(logHandler);
+
+            IProcessor processor = new Processor(container);
+            GenericInCommand<string> commandIn = processor.Process<GenericInCommand<string>, string>("plopp");
+            var commandOut = CallAsync(container).Result;
         }
     }
 

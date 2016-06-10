@@ -12,19 +12,20 @@ namespace Command.Infrastructure.Core
     using System.Threading.Tasks;
 
     using Microsoft.Practices.ServiceLocation;
+    using Microsoft.Practices.Unity;
 
     public sealed class Processor : IProcessor
     {
-        private readonly IServiceLocator serviceLocator;
-
-        public Processor(IServiceLocator serviceLocator)
+        private readonly IUnityContainer container;
+        
+        public Processor(IUnityContainer container)
         {
-            this.serviceLocator = serviceLocator;
+            this.container = container;
         }
 
         public TCommand Process<TCommand, TIn>(TIn input) where TCommand : CommandBase, ICommandIn<TIn>
         {
-            TCommand command = this.serviceLocator.GetInstance<TCommand>();
+            TCommand command = this.container.Resolve<TCommand>();
             command.Input = input;
             command.Execute();
             return command;
@@ -33,7 +34,7 @@ namespace Command.Infrastructure.Core
         public async Task<TCommand> ProcessAsync<TCommand, TIn>(TIn input)
             where TCommand : CommandBaseAsync, ICommandIn<TIn>
         {
-            TCommand command = this.serviceLocator.GetInstance<TCommand>();
+            TCommand command = this.container.Resolve<TCommand>();
             command.Input = input;
             await command.Execute();
             return command;

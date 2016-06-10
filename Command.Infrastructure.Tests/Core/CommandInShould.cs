@@ -3,8 +3,8 @@
 //      Copyright (c) . All rights reserved.
 //  </copyright>
 //  <actor>S614599 (VANDENBUSSCHE Julien)</actor>
-//  <created>02/05/2016 21:47</created>
-//  <modified>10/06/2016 15:34</modified>
+//  <created>10/06/2016 16:18</created>
+//  <modified>10/06/2016 16:20</modified>
 //  -----------------------------------------------------------------------
 
 namespace Command.Infrastructure.Tests.Core
@@ -17,6 +17,10 @@ namespace Command.Infrastructure.Tests.Core
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using Moq;
+
+    using SampleCommand;
+
+    using SampleValidator;
 
     [TestClass]
     public class CommandInShould

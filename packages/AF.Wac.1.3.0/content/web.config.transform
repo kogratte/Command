@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <system.web>
+    <httpModules>
+      <add name="WacAuthentication" type="AF.FWK.Security.Web.WacAuthenticationModule, AF.FWK.Security.Web"/>
+    </httpModules>
+    
+    <roleManager enabled="true" defaultProvider="WacRoleProvider">
+      <providers>
+        <add name="WacRoleProvider" type="AF.FWK.Security.Web.WacRoleProvider" application="/" />
+      </providers>
+    </roleManager>
+  </system.web>
+  
+  <system.webServer>
+    <modules>
+    <add name="WacAuthentication" type="AF.FWK.Security.Web.WacAuthenticationModule, AF.FWK.Security.Web"/>
+  </modules>
+  </system.webServer>
+  
+</configuration>
