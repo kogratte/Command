@@ -1,0 +1,1 @@
+C:\DEV\GitHub\Command\Command.App\bin\Release\Command.App.exe.config

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Command</id>
+    <title>Command</title>
+    <version>2.0.0</version>
+    <authors>Vandenbussche</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Infrastructure du pattern command
+    </description>
+    <tags>Command</tags>
+    <summary>
+      Fournit des classes Permettant la mise en place du pattern command
+      ajout d'un interface pour le messager
+    </summary>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" />
+      <dependency id="Unity" />
+      <dependency id="CommonServiceLocator" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\bin\release\Command.dll" target="lib\net45\Command.dll" />
+    <file src="..\bin\release\Command.XML" target="lib\net45\Command.XML" />
+  </files>
+</package>
