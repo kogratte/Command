@@ -23,28 +23,30 @@ namespace Command.Infrastructure.Core
             this.container = container;
         }
 
-        public TCommand Process<TCommand, TIn>(TIn input) where TCommand : CommandBase, ICommandIn<TIn>
+        public TCommand Process<TCommand, TIn>(TIn input) where TCommand : ICommandIn<TIn>
         {
             TCommand command = this.container.Resolve<TCommand>();
             command.Input = input;
-            command.Execute();
+            var commandBase = command as CommandBase;
+            commandBase.Execute();
             return command;
         }
 
         public async Task<TCommand> ProcessAsync<TCommand, TIn>(TIn input)
-            where TCommand : CommandBaseAsync, ICommandIn<TIn>
+            where TCommand : ICommandIn<TIn>
         {
             TCommand command = this.container.Resolve<TCommand>();
             command.Input = input;
-            await command.Execute();
+            var commandBase = command as CommandBaseAsync;
+            await commandBase.Execute();
             return command;
         }
     }
 
     public interface IProcessor
     {
-        TCommand Process<TCommand, TIn>(TIn input) where TCommand : CommandBase, ICommandIn<TIn>;
+        TCommand Process<TCommand, TIn>(TIn input) where TCommand : ICommandIn<TIn>;
 
-        Task<TCommand> ProcessAsync<TCommand, TIn>(TIn input) where TCommand : CommandBaseAsync, ICommandIn<TIn>;
+        Task<TCommand> ProcessAsync<TCommand, TIn>(TIn input) where TCommand : ICommandIn<TIn>;
     }
 }
