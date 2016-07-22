@@ -35,7 +35,6 @@ C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Command.Infrastruct
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Command.Infrastructure.Tests.dll
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Command.Infrastructure.Tests.pdb
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Castle.Core.dll
-C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Command.Infrastructure.dll
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\dotMemory.Unit.dll
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
@@ -46,7 +45,6 @@ C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\StyleCop.CSharp.dll
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\StyleCop.dll
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
-C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Command.Infrastructure.pdb
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Castle.Core.xml
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\dotMemory.Unit.xml
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
@@ -58,3 +56,6 @@ C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Moq.xml
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Newtonsoft.Json.xml
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
 C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\fr\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Command.dll
+C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Command.pdb
+C:\DEV\GitHub\Command\Command.Infrastructure.Tests\bin\Debug\Command.xml

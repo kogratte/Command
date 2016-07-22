@@ -1,11 +1,11 @@
-//  -----------------------------------------------------------------------
-//  <copyright file="InputValidator.cs" company="anonyme">
-//      Copyright (c) . All rights reserved.
-//  </copyright>
-//  <actor>S614599 (VANDENBUSSCHE Julien)</actor>
-//  <created>02/05/2016 21:47</created>
-//  <modified>10/06/2016 15:12</modified>
-//  -----------------------------------------------------------------------
+// //  -----------------------------------------------------------------------
+// //  <copyright file="InputValidator.cs" company="AXA France Service">
+// //      Copyright (c) AXA France Service. All rights reserved.
+// //  </copyright>
+// //  <actor>S614599 (VANDENBUSSCHE Julien)</actor>
+// //  <created>10/06/2016 15:49</created>
+// //  <modified>08/07/2016 14:08</modified>
+// //  -----------------------------------------------------------------------
 
 namespace Command.Infrastructure.Core
 {
@@ -33,7 +33,8 @@ namespace Command.Infrastructure.Core
         {
             Type valueType = typeof(TIn);
             bool isNull = input == null;
-            if (valueType.IsPrimitive() || (isNull && valueType.IsNullableT()))
+            if (valueType.IsPrimitive()
+                || (isNull && valueType.IsGenericType && valueType.GetGenericTypeDefinition() == typeof(Nullable<>)))
             {
                 return true;
             }

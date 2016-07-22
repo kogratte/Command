@@ -9,8 +9,6 @@ C:\DEV\GitHub\Command\Command.App\bin\Release\Microsoft.Practices.Unity.Configur
 C:\DEV\GitHub\Command\Command.App\bin\Release\Microsoft.Practices.Unity.dll
 C:\DEV\GitHub\Command\Command.App\bin\Release\Microsoft.Practices.Unity.RegistrationByConvention.dll
 C:\DEV\GitHub\Command\Command.App\bin\Release\Newtonsoft.Json.dll
-C:\DEV\GitHub\Command\Command.App\bin\Release\StyleCop.dll
-C:\DEV\GitHub\Command\Command.App\bin\Release\Microsoft.Build.Utilities.v3.5.dll
 C:\DEV\GitHub\Command\Command.App\bin\Release\Command.pdb
 C:\DEV\GitHub\Command\Command.App\bin\Release\Command.xml
 C:\DEV\GitHub\Command\Command.App\bin\Release\Microsoft.Practices.ServiceLocation.pdb
@@ -19,6 +17,4 @@ C:\DEV\GitHub\Command\Command.App\bin\Release\Microsoft.Practices.Unity.xml
 C:\DEV\GitHub\Command\Command.App\bin\Release\Microsoft.Practices.Unity.Configuration.xml
 C:\DEV\GitHub\Command\Command.App\bin\Release\Microsoft.Practices.Unity.RegistrationByConvention.xml
 C:\DEV\GitHub\Command\Command.App\bin\Release\Newtonsoft.Json.xml
-C:\DEV\GitHub\Command\Command.App\bin\Release\Microsoft.Build.Utilities.v3.5.xml
-C:\DEV\GitHub\Command\Command.App\bin\Release\fr\Microsoft.Build.Utilities.v3.5.resources.dll
 C:\DEV\GitHub\Command\Command.App\obj\Release\Command.App.csprojResolveAssemblyReference.cache
